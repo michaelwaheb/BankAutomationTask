@@ -9,21 +9,20 @@ import utils.Functions;
 import java.io.IOException;
 
 public class BaseTest {
-      WebDriver driver;
+    WebDriver driver;
 
 
     @BeforeClass
     public void setup() {
         driver = new ChromeDriver();
         // Navigate to a website
-        driver.navigate().to("https://www.amazon.eg/?language=en_AE");
+        driver.navigate().to("https://www.way2automation.com/protractor-angularjs-practice-website.html");
         //Mazimize current window
         driver.manage().window().maximize();
     }
 
     @AfterClass
-    public void terminate()
-    {
+    public void terminate() {
 
         driver.quit();
 

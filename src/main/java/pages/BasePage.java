@@ -18,12 +18,12 @@ public abstract class BasePage {
     public BasePage(final WebDriver driver) {
         this.driver = driver;
         this.wait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(10))
+                .withTimeout(Duration.ofSeconds(20))
                 .pollingEvery(Duration.ofMillis(1000))
                 .ignoring(NotFoundException.class)
                 .ignoring(ElementNotInteractableException.class)
                 .ignoring(StaleElementReferenceException.class)
                 .ignoring(AssertionError.class);
-        this.bot = new Bot(driver,wait);
+        this.bot = new Bot(driver, wait);
     }
 }
