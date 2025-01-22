@@ -1,55 +1,87 @@
-# STC TV Subscription WebSite Automation
+# Bank Automation Testing Framework
 
-This project automates the validation of subscription packages for the STC TV website for three different countries (
-Egypt, UAE, Iraq).
-It uses Selenium WebDriver to navigate the subscription home page, extract subscription & country details, and validate
-the packages based on type, price, and currency.
-Allure is used for generating detailed test reports.
+This project provides a robust and modular framework for API testing using **RestAssured**, **TestNG**, and Java. The framework includes error handling, reusable utilities, and a clear test structure to simplify API testing.
 
-## Data Validation
+## Features
 
-- The test cases validate the subscription package types, prices, and currencies by comparing them against expected
-  values defined in the CountrySubscriptionData class.
-- If any discrepancies are found, the tests will fail, and the details will be logged in the Allure test report.
+- **API Error Handling**: Centralized error handler for validating API responses.
+- **TestNG Integration**: Enables efficient and organized test execution.
+- **JSON Data Management**: Easily load and validate data from JSON files.
+- **Logging and Reporting**: Includes utilities for logging API requests and responses.
 
-## Project Structure
-
-- *HomePage.java*: Handles locators & interactions with the subscription Homepage.
-- *CountrySubscriptionData*: Supplies Packages details (type,price currency) for each country for testing.
-- *SubscriptionPackagesTest.java*: Executes tests for subscription validation.
+---
 
 ## Prerequisites
 
-- *Java 8+*
-- *Maven* (for dependency management)
-- *Selenium WebDriver*
-- *TestNG* (for running tests)
-- *Allure installtion (for generating reports)
-- *ChromeDriver* (ensure the correct path is set in the tests)
+### Software Requirements
 
-## Setup and Installation
+1. **Java Development Kit (JDK)**: Version 8 or later.
+2. **Maven**: For managing dependencies and running the tests.
+3. **IDE**: IntelliJ IDEA, Eclipse, or any Java-supported IDE.
+4. **Git**: To clone the repository.
 
-1. *Clone the Repository*
+### Dependencies
+The project uses the following libraries:
 
-   bash
-   git clone https://github.com/your-username/stc-tv-subscription-automation.git
-   cd stc-tv-subscription-automation
+- **RestAssured**: For API interactions.
+- **TestNG**: For test execution.
+- **Jackson**: For JSON data processing.
 
-2. *Install Allure Commandline*
+All dependencies are managed via Maven.
 
-   To generate Allure reports, you need to install the Allure command-line tool:
+---
 
-    - *For Windows:*
+## Installation
 
-        - Download the Allure Commandline [from GitHub](https://github.com/allure-framework/allure2/releases) and add it
-          to your system's PATH.
-        - Open CMD and run the following command (allure serve "Path\allure-results") or open execute Mavn goal from
-          intellji ide and run (mvn allure:serve)
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/michaelwaheb/API_Automation.git
+   cd API_Automation
+   ```
+
+2. **Open in IDE**:
+   - Import the project as a Maven project in your IDE.
+
+3. **Install Dependencies**:
+   - Maven will automatically resolve the dependencies when you load the `pom.xml` file. To force download:
+     ```bash
+     mvn clean install
+     ```
+
+---
+
+## Configuration
+
+1. **API Base URL**:
+   - Update the base URL in the `BaseTest` class or configuration file (src/main/java/config/Staging.properties).
+   ```properties
+   base.url=https://reqres.in/
+   ```
+
+2. **JSON Data**:
+   - Add test data files under `src/test/java/Data/`.
+
+
+---
 
 ## Running the Tests
 
-### 1. Directly from the IDE
+1. **From IDE**:
+   - Right-click on the test class or package and select `Run`.
 
-- Open the project in IntelliJ IDEA (or your preferred IDE).
-- Right-click on the SubscriptionPackagesTest.java class.
-- Select "Run SubscriptionPackagesTest".
+2. **From Command Line**:
+   ```bash
+   mvn clean test
+   ```
+
+---
+
+## Key Classes
+
+1. **ErrorHandler**: Centralized class to handle API errors and response validations.
+2. **BaseTest**: Sets up the environment for all tests.
+3. **Utils**: Provides reusable methods for printing responses and managing common tasks.
+
+---
+
+
