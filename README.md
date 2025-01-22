@@ -1,13 +1,6 @@
 # Bank Automation Testing Framework
 
-This project provides a robust and modular framework for API testing using **RestAssured**, **TestNG**, and Java. The framework includes error handling, reusable utilities, and a clear test structure to simplify API testing.
-
-## Features
-
-- **API Error Handling**: Centralized error handler for validating API responses.
-- **TestNG Integration**: Enables efficient and organized test execution.
-- **JSON Data Management**: Easily load and validate data from JSON files.
-- **Logging and Reporting**: Includes utilities for logging API requests and responses.
+This project automates Bank Account scenarios using **Selenium**, **TestNG**, and **Maven**. The framework also integrates **Allure** for test reporting.
 
 ---
 
@@ -17,15 +10,15 @@ This project provides a robust and modular framework for API testing using **Res
 
 1. **Java Development Kit (JDK)**: Version 8 or later.
 2. **Maven**: For managing dependencies and running the tests.
-3. **IDE**: IntelliJ IDEA, Eclipse, or any Java-supported IDE.
-4. **Git**: To clone the repository.
+3. **Google Chrome** and **ChromeDriver**: Ensure ChromeDriver matches your browser version.
+4. **Allure**: For generating test reports.
 
 ### Dependencies
 The project uses the following libraries:
 
-- **RestAssured**: For API interactions.
+- **Selenium**: For web automation.
 - **TestNG**: For test execution.
-- **Jackson**: For JSON data processing.
+- **Allure**: For test reporting.
 
 All dependencies are managed via Maven.
 
@@ -35,8 +28,8 @@ All dependencies are managed via Maven.
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/michaelwaheb/API_Automation.git
-   cd API_Automation
+   git clone https://github.com/michaelwaheb/BankAutomationTask.git
+   cd BankAutomationTask
    ```
 
 2. **Open in IDE**:
@@ -52,19 +45,18 @@ All dependencies are managed via Maven.
 
 ## Configuration
 
-1. **API Base URL**:
-   - Update the base URL in the `BaseTest` class or configuration file (src/main/java/config/Staging.properties).
-   ```properties
-   base.url=https://reqres.in/
-   ```
-
-2. **JSON Data**:
-   - Add test data files under `src/test/java/Data/`.
-
+ **Allure Reporting**:
+   - Ensure Allure is installed:
+     ```bash
+     brew install allure # For macOS
+     choco install allure # For Windows
+     ```
 
 ---
 
 ## Running the Tests
+
+
 
 1. **From IDE**:
    - Right-click on the test class or package and select `Run`.
@@ -73,15 +65,6 @@ All dependencies are managed via Maven.
    ```bash
    mvn clean test
    ```
-
----
-
-## Key Classes
-
-1. **ErrorHandler**: Centralized class to handle API errors and response validations.
-2. **BaseTest**: Sets up the environment for all tests.
-3. **Utils**: Provides reusable methods for printing responses and managing common tasks.
-
----
+3. **Allure Report generating automatically after run**
 
 
